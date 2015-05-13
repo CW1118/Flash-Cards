@@ -1,4 +1,6 @@
 import random
+import speech_recognition as sr
+import pyaudio
 
 material = {"not False": "True",
 "not True": "False",
@@ -26,9 +28,32 @@ material = {"not False": "True",
 "0 == 1": "False",
 "0 == 0": "True"}
 
-print "Type 't' for True or 'f' for False."
+choice = raw_input("Do you want to study using 'text' or 'voice'?"
 
-def ask():
+while True:
+	if choice == "text":
+		text()
+		
+	elif choice == "voice":
+		audio()
+		
+	else:
+		print "I don't understand.  Try typing 'text' or 'voice'."
+		
+def audio():
+	#***STILL IN TESTING***
+	r = sr.Recognizer()
+	
+	with sr.Microphone() as source:                # use the default microphone as the audio source
+		audio = r.listen(source)                   # listen for the first phrase and extract it into audio data
+
+	try:
+		print("You said " + r.recognize(audio))   		# recognize speech using Google Speech Recognition
+	
+	except LookupError:                            # speech is unintelligible
+		print("Could not understand audio")
+
+def text():
 	
 	while True:
 		question = random.choice(material.keys())
@@ -53,6 +78,5 @@ def ask():
 		
 	else:
 		print "WRONG, %r is %s.\n" % (question, answer)
-
-while True:		
-	ask()
+		
+	text()
