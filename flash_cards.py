@@ -1,10 +1,42 @@
+import random
+
+material = {"not False": "True",
+"not True": "False",
+"True or False": "True",
+"True or True": "True",
+"False or True": "True",
+"False or False": "False",
+"True and False": "False",
+"True and True": "True",
+"False and True": "False",
+"False and False": "False",
+"not (True or False)": "False",
+"not (True or True)": "False",
+"not (False or True)": "False",
+"not (False or False)": "True",
+"not (True and True)": "False",
+"not (False and True)": "True",
+"not (False and False )": "True",
+"1 != 0": "True",
+"1 != 1": "False",
+"0 != 1": "True",
+"0 != 0": "False",
+"1 == 0": "False",
+"1 == 1": "True",
+"0 == 1": "False",
+"0 == 0": "True"}
+
 print "Type 't' for True or 'f' for False."
 
-def ask(question, answer):
+def ask():
 	
-	while True:	
+	while True:
+		question = random.choice(material.keys())
+		answer = material[question]
+		
 		print question
 		ans = raw_input("> ")
+		
 		if ans == "t":
 			ans = "True"
 			break
@@ -21,30 +53,6 @@ def ask(question, answer):
 		
 	else:
 		print "WRONG, %r is %s.\n" % (question, answer)
-		
-ask("not False", "True")
-ask("not True", "False")
-ask("True or False", "True")
-ask("True or True", "True")
-ask("False or True", "True")
-ask("False or False", "False")
-ask("True and False", "False")
-ask("True and True", "True")
-ask("False and True", "False")
-ask("False and False", "False")
-ask("not (True or False)", "False")
-ask("not (True or True)", "False")
-ask("not (False or True)", "False")
-ask("not (False or False)", "True")
-ask("not (True and False)", "True")
-ask("not (True and True)", "False")
-ask("not (False and True)", "True")
-ask("not (False and False )", "True")
-ask("1 != 0", "True")
-ask("1 != 1", "False")
-ask("0 != 1", "True")
-ask("0 != 0", "False")
-ask("1 == 0", "False")
-ask("1 == 1", "True")
-ask("0 == 1", "False")
-ask("0 == 0", "True")
+
+while True:		
+	ask()
