@@ -33,8 +33,8 @@ choice = raw_input("Do you want to study using 'text' or 'voice'?\n> ")
 		
 def speech():
 	tts = pyttsx.init()
-	question = random.choice(material.keys())
-	tts.say(question)
+	question = random.choice(material.keys())	#pick random question from material
+	tts.say(question)	#ask question
 	tts.runAndWait()
 	answer = material[question]
 	
@@ -53,7 +53,6 @@ def speech():
 		tts.runAndWait()
 
 def text():
-	
 	while True:
 		question = random.choice(material.keys())
 		answer = material[question]

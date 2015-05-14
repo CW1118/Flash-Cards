@@ -19,3 +19,10 @@ I still welcome anyone who wants to contribute to my projects to do so.
 
 Thanks for checking out Study Buddy!
 -Coty Williams
+
+Required Tools:
+
+pyttsx	- https://pyttsx.readthedocs.org/en/latest/install.html
+speech_recognition	- https://pypi.python.org/pypi/SpeechRecognition/
+pyaudio	- https://people.csail.mit.edu/hubert/pyaudio/
+pywin32	- http://sourceforge.net/projects/pywin32/files/pywin32/
