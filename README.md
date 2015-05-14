@@ -18,4 +18,4 @@ As with all of my projects on GitHub I'm using this script as a method for me to
 I still welcome anyone who wants to contribute to my projects to do so.
 
 Thanks for checking out Study Buddy!
-Coty Williams
+-Coty Williams
